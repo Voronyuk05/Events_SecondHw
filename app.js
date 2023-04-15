@@ -45,14 +45,16 @@ inputAmount.addEventListener('input', () => {
 
 function createBoxes(amount) {
     amount = Number(inputAmount.value)
-    let t = 0
+    let blockSizes = 0
     for (let i = 1; i <= amount; i += 1) {
         const newDiv =  document.createElement('div')
-        newDiv.style.width = `${30+t}px`
-        newDiv.style.height = `${30+t}px`
+        newDiv.style.width = `${30+blockSizes}px`
+        newDiv.style.height = `${30+blockSizes}px`
+        let color = Math.round(Math.random()*65025).toString(16);
+        newDiv.style.backgroundColor = '#' + color
         newDiv.textContent = "New Div"
         container.appendChild(newDiv)
-        t += 10
+        blockSizes += 10
     }
 }
 
